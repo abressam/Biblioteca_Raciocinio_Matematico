@@ -260,6 +260,7 @@ def obter_funcao_exponencial():
 
 
 def obter_ordem_funcao_exponencial(a):
+    print(f"O valor de a = {a}\n")
     if a > 1:
         print("A função exponencial é crescente")
     elif a > 0 and a < 1:
@@ -539,17 +540,17 @@ def multiplicar_matrizes(primeira_matriz, primeira_matriz_linha, primeira_matriz
 
 
 def obter_matriz_transposta(matriz_completa, numero_linhas, numero_colunas):
-    transposta = criar_matriz(numero_linhas, numero_colunas)
+    transposta = criar_matriz(numero_colunas, numero_linhas)
 
-    for linha in range(numero_linhas):
-        for coluna in range(numero_colunas):
-            transposta[coluna][linha] = matriz_completa[linha][coluna]
+    for linha in range(numero_colunas):
+        for coluna in range(numero_linhas):
+            transposta[linha][coluna] = matriz_completa[coluna][linha]
 
     print(f"\nMatriz {numero_linhas}x{numero_colunas} criada:\n")
     imprimir_matriz(matriz_completa, numero_linhas)
 
     print("\nMatriz transposta:\n")
-    for linha in range(numero_linhas):
+    for linha in range(numero_colunas):
         print(transposta[linha])
 
 
